@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Jobs\PageFormFields;
 use App\Http\Requests;
 use App\Http\Requests\PageCreateRequest;
 use App\Http\Requests\PageUpdateRequest;
@@ -12,6 +11,20 @@ use Carbon\Carbon;
 
 class PageController extends Controller
 {
+
+    //Fields to update
+    protected $fields = [
+        'title' => '',
+        'subtitle' => '',
+        'subtitle' => '',
+        'content_raw' => '',
+        'page_image' => '',
+        'meta_description' => '',
+        'is_draft' => '',
+        'layout' => 'blog.index',
+        'published_at' => '',
+        'reverse_direction' => 0,
+    ];
 
     /**
      * Display a listing of the resource.
@@ -38,7 +51,10 @@ class PageController extends Controller
      */
     public function create()
     {
-        $data = $this->dispatch(new PageFormFields());
+        $data = [];
+        foreach ($this->fields as $field => $default) {
+            $data[$field] = old($field, $default);
+        }
 
         return view('admin.page.create', $data);
     }
@@ -51,9 +67,7 @@ class PageController extends Controller
      */
     public function store(PageCreateRequest $request)
     {
-        $page = Page::create($request->pageFillData());
-        $page->syncTags($request->get('tags', []));
-
+        Page::create($request->pageFillData());
         return redirect()
             ->route('admin.page.index')
             ->withSuccess('New Page Successfully Created.');
@@ -78,7 +92,11 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $data = $this->dispatch(new PageFormFields($id));
+        $page = Page::findOrFail($id);
+        $data = ['id' => $id];
+        foreach (array_keys($this->fields) as $field) {
+            $data[$field] = old($field, $page->$field);
+        }
 
         return view('admin.page.edit', $data);
     }
@@ -95,7 +113,6 @@ class PageController extends Controller
         $page = Page::findOrFail($id);
         $page->fill($request->pageFillData());
         $page->save();
-        $page->syncTags($request->get('tags', []));
 
         if ($request->action === 'continue') {
             return redirect()
@@ -117,7 +134,6 @@ class PageController extends Controller
     public function destroy($id)
     {
         $page = Page::findOrFail($id);
-        $page->tags()->detach();
         $page->delete();
 
         return redirect()

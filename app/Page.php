@@ -41,16 +41,6 @@ class Page extends Model
     }
 
     /**
-     * The many-to-many relationship between posts and tags.
-     *
-     * @return BelongsToMany
-     */
-    public function tags()
-    {
-        return $this->belongsToMany('App\Tag', 'post_tag_pivot');
-    }
-
-    /**
      * Set the title attribute and automatically the slug
      *
      * @param string $value
@@ -93,24 +83,5 @@ class Page extends Model
 
         $this->attributes['content_raw'] = $value;
         $this->attributes['content_html'] = $markdown->toHTML($value);
-    }
-
-    /**
-     * Sync tag relation adding new tags as needed
-     *
-     * @param array $tags
-     */
-    public function syncTags(array $tags)
-    {
-        Tag::addNeededTags($tags);
-
-        if (count($tags)) {
-            $this->tags()->sync(
-                Tag::whereIn('tag', $tags)->lists('id')->all()
-            );
-            return;
-        }
-
-        $this->tags()->detach();
     }
 }

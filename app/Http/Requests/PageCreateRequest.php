@@ -23,9 +23,8 @@ class PageCreateRequest extends Request
         return [
             'title' => 'required',
             'subtitle' => 'required',
-            'content' => 'required',
-            'publish_date' => 'required',
-            'publish_time' => 'required',
+            'content_raw' => 'required',
+            'published_at' => 'required',
             'layout' => 'required',
         ];
     }
@@ -42,7 +41,7 @@ class PageCreateRequest extends Request
             'title' => $this->title,
             'subtitle' => $this->subtitle,
             'page_image' => $this->page_image,
-            'content_raw' => $this->get('content'),
+            'content_raw' => $this->get('content_raw'),
             'meta_description' => $this->meta_description,
             'is_draft' => (bool)$this->is_draft,
             'published_at' => $published_at,

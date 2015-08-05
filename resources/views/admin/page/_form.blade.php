@@ -57,32 +57,23 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="content" class="col-md-2 control-label">
+            <label for="content_raw" class="col-md-2 control-label">
                 Content
             </label>
             <div class="col-md-10">
-        <textarea class="form-control" name="content" rows="14"
-                  id="content">{{ $content }}</textarea>
+        <textarea class="form-control" name="content_raw" rows="14"
+                  id="content_raw">{{ $content_raw }}</textarea>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            <label for="publish_date" class="col-md-3 control-label">
+            <label for="published_at" class="col-md-3 control-label">
                 Pub Date
             </label>
             <div class="col-md-8">
-                <input class="form-control" name="publish_date" id="publish_date"
-                       type="text" value="{{ $publish_date }}">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="publish_time" class="col-md-3 control-label">
-                Pub Time
-            </label>
-            <div class="col-md-8">
-                <input class="form-control" name="publish_time" id="publish_time"
-                       type="text" value="{{ $publish_time }}">
+                <input class="form-control" name="published_at" id="published_at"
+                       type="text" value="{{ $published_at }}">
             </div>
         </div>
         <div class="form-group">
@@ -93,21 +84,6 @@
                         Draft?
                     </label>
                 </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="tags" class="col-md-3 control-label">
-                Tags
-            </label>
-            <div class="col-md-8">
-                <select name="tags[]" id="tags" class="form-control" multiple>
-                    @foreach ($allTags as $tag)
-                        <option @if (in_array($tag, $tags)) selected @endif
-                        value="{{ $tag }}">
-                            {{ $tag }}
-                        </option>
-                    @endforeach
-                </select>
             </div>
         </div>
         <div class="form-group">

@@ -22,20 +22,20 @@
                 <table id="posts-table" class="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th>Published</th>
                         <th>Title</th>
                         <th>Subtitle</th>
+                        <th>Published</th>
                         <th data-sortable="false">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($pages as $page)
                         <tr>
+                            <td>{{ $page->title }}</td>
+                            <td>{{ $page->subtitle }}</td>
                             <td data-order="{{ $page->published_at->timestamp }}">
                                 {{ $page->published_at->format('j-M-y g:ia') }}
                             </td>
-                            <td>{{ $page->title }}</td>
-                            <td>{{ $page->subtitle }}</td>
                             <td>
                                 <a href="/admin/page/{{ $page->id }}/edit"
                                    class="btn btn-xs btn-info">

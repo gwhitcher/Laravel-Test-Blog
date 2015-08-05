@@ -1,18 +1,10 @@
 @extends('admin.layout')
 
-@section('styles')
-    <link href="/assets/pickadate/themes/default.css" rel="stylesheet">
-    <link href="/assets/pickadate/themes/default.date.css" rel="stylesheet">
-    <link href="/assets/pickadate/themes/default.time.css" rel="stylesheet">
-    <link href="/assets/selectize/css/selectize.css" rel="stylesheet">
-    <link href="/assets/selectize/css/selectize.bootstrap3.css" rel="stylesheet">
-@stop
-
 @section('content')
     <div class="container-fluid">
         <div class="row page-title-row">
             <div class="col-md-12">
-                <h3>Pages <small>» Edit Page</small></h3>
+                <h3>Pages <small>&raquo; Edit Page</small></h3>
             </div>
         </div>
 
@@ -98,6 +90,7 @@
 @stop
 
 @section('scripts')
+
     <script>
         $(function() {
             $("#publish_date").pickadate({

@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="row page-title-row">
             <div class="col-md-12">
-                <h3>Pages <small>» Add New Page</small></h3>
+                <h3>Pages <small>&raquo; Add New Page</small></h3>
             </div>
         </div>
 
