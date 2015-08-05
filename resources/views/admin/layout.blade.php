@@ -39,6 +39,13 @@
 
 @yield('content')
 
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="text-muted">&copy; {{ config('blog.title') }} <?php echo date("Y"); ?> - Developed by <a href="http://georgewhitcher.com" target="_blank">George Whitcher</a></p>
+    </div>
+</footer>
+
 <script
         src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
