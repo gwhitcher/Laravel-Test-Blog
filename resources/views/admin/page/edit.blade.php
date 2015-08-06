@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('styles')
+    <link href="/assets/pickadate/themes/default.css" rel="stylesheet">
+    <link href="/assets/pickadate/themes/default.date.css" rel="stylesheet">
+    <link href="/assets/pickadate/themes/default.time.css" rel="stylesheet">
+    <link href="/assets/selectize/selectize.css" rel="stylesheet">
+    <link href="/assets/selectize/selectize.bootstrap3.css" rel="stylesheet">
+@stop
+
 @section('content')
     <div class="container-fluid">
         <div class="row page-title-row">
@@ -90,7 +98,10 @@
 @stop
 
 @section('scripts')
-
+    <script src="/assets/pickadate/picker.js"></script>
+    <script src="/assets/pickadate/picker.date.js"></script>
+    <script src="/assets/pickadate/picker.time.js"></script>
+    <script src="/assets/selectize/selectize.min.js"></script>
     <script>
         $(function() {
             $("#publish_date").pickadate({

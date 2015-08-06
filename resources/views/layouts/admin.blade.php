@@ -7,11 +7,11 @@
 
     <title>{{ config('blog.title') }} Admin</title>
      <!-- Bootstrap -->
-    <link href="{{ config('blog.base_url') }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ config('blog.base_url') }}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Theme -->
-    <link href="{{ config('blog.base_url') }}/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="{{ config('blog.base_url') }}/assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom Styles -->
-    <link href="{{ config('blog.base_url') }}/bootstrap/css/custom.css" rel="stylesheet">
+    <link href="{{ config('blog.base_url') }}/assets/bootstrap/css/custom.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,7 +35,7 @@
             </button>
             <a class="navbar-brand" href="#">{{ config('blog.title') }} Admin</a>
         </div>
-        <div class="collapse navbar-collapse" id=navbar-menu">
+        <div class="collapse navbar-collapse" id="navbar-menu">
             @include('admin.partials.navbar')
         </div>
     </div>
@@ -53,9 +53,9 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ config('blog.base_url') }}/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ config('blog.base_url') }}/assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Custom JS -->
-<script src="{{ config('blog.base_url') }}/bootstrap/js/custom.js"></script>
+<script src="{{ config('blog.base_url') }}/assets/bootstrap/js/custom.js"></script>
 @yield('scripts')
 
 </body>

@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function showForm()
     {
-        return view('blog.contact');
+        return view('contact.index');
     }
 
     /**
