@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Blog')
+
 @section('content')
     <div class="container page_padding">
         <header>

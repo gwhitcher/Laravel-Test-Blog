@@ -11,19 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('welcome');
-});
-
-/* REDIRECT
-get('/', function () {
-    return redirect('/blog');
-});
-*/
+Route::get('/', 'PageController@index');
+Route::get('/home', 'PageController@index');
 
 get('blog', 'BlogController@index');
 get('blog/{slug}', 'BlogController@showPost');

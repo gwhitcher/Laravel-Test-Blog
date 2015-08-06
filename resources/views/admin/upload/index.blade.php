@@ -1,4 +1,9 @@
-@extends('admin.layout')
+@extends('layouts.admin')
+
+@extends('layouts.master', [
+  'title' => $post->title,
+  'meta_description' => $post->meta_description ?: config('blog.description'),
+])
 
 @section('content')
     <div class="container-fluid">

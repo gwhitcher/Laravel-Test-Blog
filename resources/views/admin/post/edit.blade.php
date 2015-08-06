@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.admin')
 
 @section('styles')
     <link href="/assets/pickadate/themes/default.css" rel="stylesheet">
@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="row page-title-row">
             <div class="col-md-12">
-                <h3>Posts <small>» Edit Post</small></h3>
+                <h3>Posts <small>&raquo; Edit Post</small></h3>
             </div>
         </div>
 
