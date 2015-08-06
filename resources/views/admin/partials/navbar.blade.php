@@ -7,11 +7,11 @@
         <li @if (Request::is('admin/tag*')) class="active" @endif>
             <a href="/admin/tag">Tags</a>
         </li>
-        <li @if (Request::is('admin/upload*')) class="active" @endif>
-            <a href="/admin/upload">Uploads</a>
-        </li>
         <li @if (Request::is('admin/page*')) class="active" @endif>
             <a href="/admin/page">Pages</a>
+        </li>
+        <li @if (Request::is('admin/upload*')) class="active" @endif>
+            <a href="/admin/upload">Uploads</a>
         </li>
     @endif
 </ul>
