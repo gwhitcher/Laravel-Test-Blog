@@ -3,15 +3,12 @@
 @section('title', 'Blog')
 
 @section('content')
-    <div class="container page_padding">
-        <header>
-            <div class="container">
-                <div class="site-heading">
-                    <h1>Blog</h1>
-                    <hr class="small">
-                </div>
-            </div>
-        </header>
+    <header class="intro-header" style="background-image: url('{{ page_image('headers/blog-bg.jpg') }}')">&nbsp;</header>
+    <div class="container">
+        <div class="site-heading">
+            <h1>Blog</h1>
+            <hr class="small">
+        </div>
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

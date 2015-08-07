@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactMeRequest;
 use Illuminate\Support\Facades\Mail;
+use DB;
 
 class ContactController extends Controller
 {
@@ -13,7 +14,8 @@ class ContactController extends Controller
      */
     public function showForm()
     {
-        return view('contact.index');
+        $nav_tags = DB::table('tags')->orderBy('title', 'asc')->get();
+        return view('contact.index', ['nav_tags' => $nav_tags]);
     }
 
     /**

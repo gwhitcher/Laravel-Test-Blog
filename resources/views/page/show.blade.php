@@ -4,14 +4,9 @@
 ?>
 @section('title', $title)
 
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
 @section('content')
-    <div class="container page_padding">
+    <header class="intro-header" style="background-image: url('{{ page_image($page->page_image) }}')">&nbsp;</header>
+    <div class="container">
         <div class="site-heading">
             <h1>{{ $page->title }}</h1>
             <hr class="small">

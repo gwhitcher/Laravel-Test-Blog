@@ -42,15 +42,15 @@
                         <li <?=echoActiveClassIfRequestMatches("about")?>><a href="{{ config('blog.base_url') }}/about">About</a></li>
                         <li <?=echoActiveClassIfRequestMatches("contact")?>><a href="{{ config('blog.base_url') }}/contact">Contact</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li class="dropdown-header">Tags</li>
                                 <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <?php foreach($nav_tags as $tag):
+                                    $tag_fix = urlencode($tag->tag);
+                                    echo '<li><a href="'.config('config.base_url').'blog?tag='.$tag_fix.'">'.$tag->title.'</a></li>';
+                                endforeach;
+                                ?>
                             </ul>
                         </li>
                         <li <?=echoActiveClassIfRequestMatches("admin")?>><a href="{{ config('blog.base_url') }}/admin" target="_blank">Admin</a></li>

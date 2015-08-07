@@ -19,8 +19,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.post.index')
-            ->withPosts(Post::all());
+        $posts = Post::orderBy('published_at', 'desc')->get();
+        return view('admin.post.index')->withPosts($posts);
     }
 
     /**

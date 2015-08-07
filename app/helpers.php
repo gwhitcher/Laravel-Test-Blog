@@ -34,7 +34,7 @@ function checked($value)
 function page_image($value = null)
 {
     if (empty($value)) {
-        $value = config('blog.page_image');
+        $value = config('blog.uploads.webpath') . '/' . config('blog.page_image');
     }
     else {
         $value = config('blog.uploads.webpath') . '/' . $value;

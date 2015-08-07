@@ -3,16 +3,12 @@
 @section('title', 'Contact')
 
 @section('content')
-    <div class="container page_padding">
-        <header class="intro-header"
-                style="background-image: url('{{ page_image('contact-bg.jpg') }}')">
-            <div class="container">
-                    <div class="site-heading">
-                            <h1>Contact Me</h1>
-                            <hr class="small">
-                    </div>
-            </div>
-        </header>
+    <header class="intro-header" style="background-image: url('{{ page_image('headers/contact-bg.jpg') }}')">&nbsp;</header>
+    <div class="container">
+        <div class="site-heading">
+            <h1>Contact Me</h1>
+            <hr class="small">
+        </div>
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

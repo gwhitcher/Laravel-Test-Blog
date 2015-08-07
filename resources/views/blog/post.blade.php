@@ -5,13 +5,15 @@
 @section('title', $post->title)
 
 @section('content')
+    <header class="intro-header" style="background-image: url('{{ page_image($post->page_image) }}')">&nbsp;</header>
 
-    <header class="intro-header"
-            style="background-image: url('{{ page_image($post->page_image) }}')">
-        <div class="container page_padding">
-                    <div class="post-heading">
-                        <h1>{{ $post->title }}</h1>
-                        <h2 class="subheading">{{ $post->subtitle }}</h2>
+    <article>
+        <div class="container">
+
+            {{-- The Heading --}}
+            <div class="post-heading">
+                <h1>{{ $post->title }}</h1>
+                <h2 class="subheading">{{ $post->subtitle }}</h2>
             <span class="meta">
               Posted on {{ $post->published_at->format('F j, Y') }}
                 @if ($post->tags->count())
@@ -20,12 +22,8 @@
                 @endif
             </span>
             </div>
-        </div>
-    </header>
 
-    {{-- The Post --}}
-    <article>
-        <div class="container">
+            {{-- The Post --}}
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     {!! $post->content_html !!}

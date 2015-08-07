@@ -23,8 +23,8 @@
         foreach ($posts as $post):
             $item_class = ($i == 1) ? 'item active' : 'item';
             echo '<div class="'.$item_class.'">';
-            echo '<a href="'.config('blog.base_url').'/'.$post->slug.'">';
-            echo '<img src="'.page_image($post->page_image).'" alt="'.$post->title.'" />';
+            echo '<a href="'.config('blog.base_url').'/blog/'.$post->slug.'">';
+            echo '<img class="img-responsive center-block" src="'.page_image($post->page_image).'" alt="'.$post->title.'" />';
             echo '</a>';
             echo '</div>';
         $i++;
