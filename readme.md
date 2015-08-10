@@ -2,7 +2,7 @@
 
 Built By: [George Whitcher](http://georgewhitcher.com)
 
-LBLOG is a rewrite from the ground up of the LBLOG software for Laravel 5.X.  It utilizes JQUERY and BOOTSTRAP 3.  LBLOG 2.0 is open source for you to enjoy and contribute to.
+LBLOG is a rewrite from the ground up of the [LBLOG](https://github.com/gwhitcher/LBLOG-A-Laravel-blogging-software) software for Laravel 5.X.  It utilizes JQUERY and BOOTSTRAP 3.  LBLOG is open source for you to enjoy and contribute to.
 
 ### Install
 
