@@ -48,7 +48,7 @@
                                 <li role="separator" class="divider"></li>
                                 <?php foreach($nav_tags as $tag):
                                     $tag_fix = urlencode($tag->tag);
-                                    echo '<li><a href="'.config('config.base_url').'blog?tag='.$tag_fix.'">'.$tag->title.'</a></li>';
+                                    echo '<li><a href="'.config('config.base_url').'/blog?tag='.$tag_fix.'">'.$tag->title.'</a></li>';
                                 endforeach;
                                 ?>
                             </ul>

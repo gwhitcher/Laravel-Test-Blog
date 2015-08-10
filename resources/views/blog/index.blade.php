@@ -1,12 +1,25 @@
 @extends('layouts.master')
 
-@section('title', 'Blog')
+<?php
+if(!empty($tag->title)) {
+    $title = 'Blog Tag: '.$tag->title;
+} else {
+    $title = 'Blog';
+}
+if(!empty($tag->page_image)) {
+    $page_image = $tag->page_image;
+} else {
+    $page_image = 'headers/blog-bg.jpg';
+}
+?>
+
+@section('title', $title)
 
 @section('content')
-    <header class="intro-header" style="background-image: url('{{ page_image('headers/blog-bg.jpg') }}')">&nbsp;</header>
+    <header class="intro-header" style="background-image: url('{{ page_image($page_image) }}')">&nbsp;</header>
     <div class="container">
         <div class="site-heading">
-            <h1>Blog</h1>
+            <h1><?php echo $title; ?></h1>
             <hr class="small">
         </div>
 

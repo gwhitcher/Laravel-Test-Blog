@@ -19,8 +19,9 @@ class CreatePageTable extends Migration
             $table->text('content_html');
             $table->string('page_image');
             $table->string('meta_description');
-            $table->string('layout')->default('layouts.master');
+            $table->string('layout')->default('page.show');
             $table->timestamps();
+            $table->timestamp('published_at')->index();
         });
     }
 
